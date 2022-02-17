@@ -56,6 +56,7 @@ function Validation() {
   const FoodError = document.getElementById("food-error");
   const RentError = document.getElementById("rent-error");
   const ClothError = document.getElementById("cloth-error");
+        
 
   if (IncomeSave < 0 || IncomeSave == "") {
     IncomeError.style.display = "block";
