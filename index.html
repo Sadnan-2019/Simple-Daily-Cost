@@ -31,6 +31,9 @@
                 id="income-amount"
                 placeholder="Enter your income"
               />
+              <p class="notify" id="income-error" style="display: none">
+                Please Input Valid Income Value
+              </p>
             </div>
             <h3>Expence</h3>
 
@@ -42,6 +45,9 @@
                 class="form-control"
                 placeholder="Enter your food"
               />
+              <p class="notify" id="food-error" style="display: none">
+                Please Input Valid Food Value
+              </p>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Rent</label>
@@ -49,8 +55,11 @@
                 type="number"
                 id="rent-amount"
                 class="form-control"
-                placeholder="Enter your Rent"
+                placeholder="Enter your rent"
               />
+              <p class="notify" id="rent-error" style="display: none">
+                Please Input Valid Food Value
+              </p>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label"
@@ -60,33 +69,62 @@
                 type="number"
                 id="cloth-amount"
                 class="form-control"
-                placeholder="Enter your food"
+                placeholder="Enter your clothe"
               />
+              <p class="notify" id="cloth-error" style="display: none">
+                Please Input Valid Clothe Value
+              </p>
             </div>
 
-            <button type="submit" class="btn btn-primary  text-center" id="calculte">Calculate</button>
+            <button
+              type="submit"
+              class="btn btn-primary text-center"
+              id="calculte"
+            >
+              Calculate
+            </button>
 
-            <h3 class="text-center">Total Expence : <span id="total-expence">0000</span></h3>
-            <h3 class="text-center">Balance : <span id="total-balance">0000</span></h3>
+            <p class="text-center notify">
+                <span id="total-over-expence" style="display: none;">Not Enough Your Income From Expence</span>
+            </p>
+
+            <h3 class="text-center">
+              Total Expence : <span id="total-expence">0000</span>
+            </h3>
+            <h3 class="text-center">
+              Balance : <span id="total-balance">0000</span>
+            </h3>
 
             <div class="row">
               <div class="col-lg-10 d-flex">
-                        <label for="" class=" ">Saving Amount:</label>
+                <label for="" class=" ">Saving Amount:</label>
                 <input
                   type="number"
                   class="form-control"
                   placeholder="Saving-amount"
                   id="saving-amount"
                 />
-                <span class="  mx-2 "  style="height: 20px; width: 25px;">%</span>
-                <button type="submit" class="btn btn-primary mx-4" id="after-saving">Saving</button>
-
-                
+                <span class="mx-2" style="height: 20px; width: 25px">%</span>
+                <button
+                  type="submit"
+                  class="btn btn-primary mx-4"
+                  id="after-saving"
+                >
+                  Saving
+                </button>
               </div>
               <!-- <h5 class="text-center my-4">Saving Amount: 2000 </h5> -->
-              <h3 class="text-center my-4" >Saving Amount: <span id="total-saving-amout">0000</span></h3>
+              <p class="text-center notify">
+                <span id="total-over-savings" style="display: none;">Not Enough Your Balance </span>
+            </p>
+              <h3 class="text-center my-4">
+                Saving Amount: <span id="total-saving-amout">0000</span>
+              </h3>
 
-                <h5 class="text-center">Remaining Balance:20 </h5>
+              <!-- <h5 class="text-center" >20 </h5> -->
+              <h3 class="text-center my-4">
+                Remaining Balance: <span id="remaining-balanace">0000</span>
+              </h3>
             </div>
           </div>
         </div>
