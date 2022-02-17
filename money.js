@@ -56,7 +56,6 @@ function Validation() {
   const FoodError = document.getElementById("food-error");
   const RentError = document.getElementById("rent-error");
   const ClothError = document.getElementById("cloth-error");
-        
 
   if (IncomeSave < 0 || IncomeSave == "") {
     IncomeError.style.display = "block";
@@ -108,14 +107,12 @@ function AfterSavings() {
   const TotalSavingsAmount = document.getElementById("total-saving-amout");
   const TotalSavings = (IncomeSaveValue * SavingAmountValue) / 100;
 
-  if(TotalSavings>BalanceExpence){
+  if (BalanceExpence < TotalSavings) {
     // console.log("its not possible");
-    const OverSavings=document.getElementById("total-over-savings");
-    OverSavings.style.display="block";
-    OverSavings.style.color="red";
-
-  }else{
-     
+    const OverSavings = document.getElementById("total-over-savings");
+    OverSavings.style.display = "block";
+    OverSavings.style.color = "red";
+  } else if (BalanceExpence >= TotalSavings) {
     TotalSavingsAmount.innerText = TotalSavings;
   }
 
@@ -125,19 +122,16 @@ function AfterSavings() {
 
   // const BalanceExpence = BalanneAfterExpence;
   // console.log(BalanceExpence,"balaneexpnece");
-  if(BalanceExpence >TotalSavings){
+  if (BalanceExpence > TotalSavings) {
     const Remaining = BalanceExpence - TotalSavings;
     const RemainngBalance = document.getElementById("remaining-balanace");
-  RemainngBalance.innerText = Remaining;
-  }
-  else{
-    const OverSavings=document.getElementById("total-over-savings");
-    OverSavings.style.display="block";
-    OverSavings.style.color="red";
+    RemainngBalance.innerText = Remaining;
+  } else {
+    const OverSavings = document.getElementById("total-over-savings");
+    OverSavings.style.display = "block";
+    OverSavings.style.color = "red";
   }
   // console.log(Remaining,"now remanin");
-
-  
 
   SavingAmount.value = "";
   IncomeSave.value = "";
@@ -152,7 +146,16 @@ document.getElementById("calculte").addEventListener("click", function () {
 document.getElementById("after-saving").addEventListener("click", function () {
   // console.log("non saving");
 
-  AfterSavings();
+  const SavingsValue = document.getElementById("saving-amount").value;
+  const savingsError = document.getElementById("saving-amount-error");
+
+  if (SavingsValue < 0 || SavingsValue == "") {
+    // savingsError.style.display ="block";
+    // savingsError.style.color ="red";
+    alert("please enter valid number");
+  } else {
+    AfterSavings();
+  }
 
   // console.log(TotalSavings);
 });
