@@ -122,7 +122,7 @@ function AfterSavings() {
 
   // const BalanceExpence = BalanneAfterExpence;
   // console.log(BalanceExpence,"balaneexpnece");
-  if (BalanceExpence > TotalSavings) {
+  if (BalanceExpence >= TotalSavings) {
     const Remaining = BalanceExpence - TotalSavings;
     const RemainngBalance = document.getElementById("remaining-balanace");
     RemainngBalance.innerText = Remaining;
