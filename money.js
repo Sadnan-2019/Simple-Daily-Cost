@@ -15,6 +15,7 @@ function CalculteBalanceExpence() {
 
   const TotalExpence = parseInt(FoodValue + RentValue + ClothValue);
   //   console.log(TotalExpence,"local");
+  // <h1>Updaate to privte to public</h1>
 
   if (IncomeValue > TotalExpence) {
     const TotalExpenceText = document.getElementById("total-expence");
